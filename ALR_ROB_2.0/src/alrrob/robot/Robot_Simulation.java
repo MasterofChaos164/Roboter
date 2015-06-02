@@ -29,14 +29,14 @@ public class Robot_Simulation implements Robot{
 	}
 	
 	@Override
-	public void moveRobotForMS(int ms) throws Exception {
+	public void moveRobotForMS(double ms) throws Exception {
 		
 		if (ms < 0)
 			throw new Exception("Exception: Only positive values allowed!");
 		
 		double distance = speed * (ms / 1000);
 		
-		// Verhältnis von Sensormittelpunkt und Robotermittelpunkt (-> Blickrichtung)
+		// Verhï¿½ltnis von Sensormittelpunkt und Robotermittelpunkt (-> Blickrichtung)
 		double x = (sensorLocation.getX() + (sensorSize.getWidth() / 2)) - (robotLocation.getX() + (robotSize.getWidth() / 2));
 		double y = (sensorLocation.getY() + (sensorSize.getHeight() / 2)) - (robotLocation.getY() + (robotSize.getHeight() / 2));
 		

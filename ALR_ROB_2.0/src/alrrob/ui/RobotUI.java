@@ -42,7 +42,7 @@ public class RobotUI extends JPanel{
 	}
 	
 	public boolean isOnLine(int x, int y) {
-		if(new Color(image.getRGB(x, y), true) == Color.BLACK)
+		if(new Color(image.getRGB(x, y)).equals(new Color(0, 0, 0)))
 			return true;		
 		return false;
 	}
