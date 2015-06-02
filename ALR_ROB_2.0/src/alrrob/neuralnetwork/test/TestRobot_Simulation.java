@@ -9,7 +9,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import pj.robot.Robot_Simulation;
+import alrrob.robot.Robot_Simulation;
 
 public class TestRobot_Simulation {
 	
