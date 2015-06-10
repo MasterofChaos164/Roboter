@@ -20,7 +20,7 @@ public class Robot_Simulation implements Robot{
 	public Robot_Simulation() {
 
 		robotSize = new Dimension(20,20);
-		robotLocation = new Point(20,20);
+		robotLocation = new Point(300, 130);
 		robotColor = Color.GREEN;
 		
 		sensorSize = new Dimension(6, 6);
@@ -44,6 +44,11 @@ public class Robot_Simulation implements Robot{
 		double proportion = x / y;
 		double yLength = Math.sqrt(Math.pow(distance, 2) / (Math.pow(proportion, 2) + 1));
 		double xLength = Math.sqrt(Math.pow(distance, 2) - Math.pow(yLength, 2));
+		
+		if (x < 0)
+			xLength *= -1;
+		if (y < 0)
+			yLength *= -1;
 		
 		// Setzt Roboter und Sensor auf ihre neue Position
 		moveRobotInDirection(xLength, yLength);

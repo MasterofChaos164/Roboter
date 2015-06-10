@@ -21,19 +21,35 @@ public class RobotNetwork {
 	
 	public void start() throws Exception {
 
-		int counter = 0;
-
-		for (int i = 0; i < 10; i++) {
-			// TODO Change 3 to something relative to sensor size
-			while (robotUI.isOnLine(robot.getSensorLocation().x + 3, robot.getSensorLocation().y + 3) == false) {
-				robot.moveRobotForMS(200);
-				robotUI.repaint();
-				System.out.println("Position: " + robot.getRobotLocation().x + " " + robot.getRobotLocation().y);
-				Thread.sleep(50);
-				counter++;
-			}
-			System.out.println("was on line");
+//		int counter = 0;
+//
+//		for (int i = 0; i < 1000; i++) {
+//			// TODO Change 3 to something relative to sensor size
+//			while (robotUI.isOnLine(robot.getSensorLocation().x + 3, robot.getSensorLocation().y + 3) == false) {
+//				robot.moveRobotForMS(200);
+//				robotUI.repaint();
+//				System.out.println("Position: " + robot.getRobotLocation().x + " " + robot.getRobotLocation().y);
+//				Thread.sleep(50);
+//				counter++;
+//			}
+//			System.out.println("was on line");
+//			robot.moveRobotForMS(200);
+//			robotUI.repaint();
+//			Thread.sleep(50);
+//		}
+		
+		double angle = 10;
+		
+		while (robotUI.isOnLine(robot.getSensorLocation().x + 3, robot.getSensorLocation().y + 3) == false) {
+			robot.moveRobotForMS(600);
+			robot.rotateRobot(angle);
+			robotUI.repaint();
+			Thread.sleep(50);
+			if (angle > 1.7)
+				angle -= 0.01;
+			System.out.println("Angle: " + angle);
 		}
+		
 	}
 	
 	public void trainRobot() {
